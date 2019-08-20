@@ -3,16 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewPostComponent } from './new-post/new-post.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostListItemComponent } from './post-list-item/post-list-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostsService } from './services/posts.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewPostComponent,
+    PostListComponent,
+    PostListItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

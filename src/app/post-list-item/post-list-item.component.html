@@ -1,0 +1,33 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': unPost.loveIts >= 0,
+'list-group-item-danger': unPost.loveIts < 0}">    
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>{{unPost.title}}
+            </h4>
+        </div>
+        <div class="col-sm-4">
+            <small>{{unPost.created_at | date : "dd/MM/yyyy HH:mm:ss"}}</small>      
+        </div>
+        <div class="col-sm-1">
+            <a (click)="onEdit(unPost.identifiant)"><i class="glyphicon glyphicon-edit"></i></a>
+            <a (click)="onDelete(unPost.identifiant)"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+        <div class="col-sm-1">
+            <span class="badge badge-light" style="margin-top:-25px;"><i class="glyphicon glyphicon-thumbs-up"></i> {{unPost.loveIts}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="small">{{unPost.content}}</p>
+        </div>      
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <button class="btn btn-success" (click)="onLoveIt()">Love it <i class="glyphicon glyphicon-thumbs-up"></i></button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-danger" (click)="onDontLoveIt()">Don't love it <i class="glyphicon glyphicon-thumbs-down"></i></button>
+        </div>
+    </div>
+</li>
